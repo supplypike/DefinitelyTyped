@@ -255,5 +255,9 @@ export interface ConfigureOptions {
     tempDir: string;
 }
 
-export function input(file: string): PDFTK;
+export interface InputMap {
+    [key: string]: string | Buffer;
+}
+
+export function input(file: string | string[] | Buffer | Buffer[] | InputMap): PDFTK;
 export function configure(opts: ConfigureOptions): void;
